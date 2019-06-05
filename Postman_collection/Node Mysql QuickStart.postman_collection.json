@@ -1,0 +1,251 @@
+{
+	"info": {
+		"_postman_id": "b79c94c7-2737-439b-812d-248f6cd0c334",
+		"name": "Node Mysql QuickStart",
+		"description": "This includes the necessary API's for the Node Mysql Quick Start project.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Base url",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Root",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "testGet",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/testGet",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"testGet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "testPost",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/testPost",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"testPost"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "selectData",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/selectData",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"selectData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insertData",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Chandu",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "50",
+							"type": "text"
+						},
+						{
+							"key": "gender",
+							"value": "Male",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/insertData",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"insertData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteData",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/deleteData",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"deleteData"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "testGetParameters",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/testGetParameters?myParam1=Test Value1&myParam2=Test Value2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"testGetParameters"
+					],
+					"query": [
+						{
+							"key": "myParam1",
+							"value": "Test Value1"
+						},
+						{
+							"key": "myParam2",
+							"value": "Test Value2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "testPostParameters",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "myParam1",
+							"value": "123",
+							"type": "text"
+						},
+						{
+							"key": "myParam2",
+							"value": "456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/testPostParameters",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"testPostParameters"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
