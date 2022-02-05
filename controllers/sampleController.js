@@ -48,7 +48,11 @@ exports.sample_selectData_get = (req, res, next) => {
                 if (err)
                     res.json(err);
                 else
-                    res.json(results);
+                    if(results.length){
+                        res.json(results);
+                    } else {
+                        res.json({ "status": "error", "message": "No data found in database. Please insert data first." });
+                    }
             })
         }
     });

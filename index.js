@@ -6,6 +6,15 @@ const bodyParser = require('body-parser');
 const logger = require('morgan');
 
 /**
+ * Load Environment Variables
+ * When developing or testing the code, use the test keys,
+ * otherwise, use the keys provided by the environment.
+ */
+ if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+
+/**
  * Routes
  */
 const api = require('./routes/api');
@@ -15,16 +24,13 @@ const api = require('./routes/api');
  */
 const app = express();
 
-const expressConfig = require('./config')().server;
-const loggerConfig = require('./config')().logger;
-
 /**
  * Express configuration.
  */
-app.set('host', expressConfig.host);
-app.set('port', expressConfig.port);
+app.set('host', process.env.HOST);
+app.set('port', process.env.PORT);
 
-app.use(logger(loggerConfig.level));
+app.use(logger(process.env.LOG_LEVEL));
 
 // parse application/json
 app.use(bodyParser.json());

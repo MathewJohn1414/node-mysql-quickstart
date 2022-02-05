@@ -1,13 +1,11 @@
-const mysql = require('mysql');
-const dbConfig = require('../config')().db;
+const mysql = require('mysql2');
 
 const mysql_pool  = mysql.createPool({
-    host: dbConfig.host,
-    user: dbConfig.username,
-    password: dbConfig.password,
-    database: dbConfig.database,
-    port: dbConfig.port,
-    ssl: dbConfig.ssl
+    host: process.env.DB_HOST,
+    user: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    port: process.env.DB_PORT
 });
 
 exports.mysql_pool = mysql_pool;

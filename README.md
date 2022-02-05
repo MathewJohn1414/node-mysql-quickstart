@@ -1,12 +1,15 @@
 # node-mysql-quickstart
-A quick start for NodeJs-MySQL API Project using Express.
+This is a sample NodeJs-MySQL API Project using Express. 
 
 ### Prerequisite
--- MySQL Server should be installed and configured.
+-- [Postman](https://www.getpostman.com/ "Postman") or any other REST client to test the APIs.<br/>
+-- MySQL Server should be installed and configured.<br/>
 -- A test database and table in MySql as mentioned below:
-&nbsp;&nbsp;&nbsp;&nbsp;Database Name: my_test_db
-&nbsp;&nbsp;&nbsp;&nbsp;Table Name: test_data
+&nbsp;&nbsp;&nbsp;&nbsp;Database Name: my_test_db<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Table Name: test_data<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;Table fields: id, name, age, gender
+
+You can use the below MySql script to create the required test database and table:
 
 ```sql	
 CREATE DATABASE  IF NOT EXISTS `my_test_db`;
@@ -19,51 +22,30 @@ CREATE TABLE `test_data` (
   PRIMARY KEY (`id`)
 );
 ```
---[Postman](https://www.getpostman.com/ "Postman") or any other REST client to test the APIs
 
 ### About the Project Configuration
-This project uses a single config file which contains all the configurations required to run this node application. So, its **mandatory** to update the `config.json` file in the `config` folder according to your system environment before running this application.
+This project uses a single `.env` file which contains all the configurations required to run this node application. So, its **mandatory** to update the `.env` file before running this application.
+Note: You don't need to commit `.env` file to git.
 
 ### Getting Started
 
 Just clone the repo and run :
 
 ```bash
-cd node-mysql-quickstart                  # Change current directory to the newly cloned directory. Here node-mysql-quickstart will be the directory name by default.
-npm install                       # install all the node dependencies
+cd node-mysql-quickstart                  # Change current directory to the newly cloned directory.
+npm install --also-dev                      # install all the node dependencies
 ```
 
-To start server in development environment:
+To start server:
 
 ```bash
-NODE_ENV=development npm start                 # In Linux based systems
+npm start
 ```
 
-```bash
-SET NODE_ENV=development                       # In Windows based systems
-npm start                 
-```
-
-To start server in staging environment:
+You can also start server using [nodemon](https://www.npmjs.com/package/nodemon "nodemon"):
 
 ```bash
-NODE_ENV=staging npm start                 # In Linux based systems
-```
-
-```bash
-SET NODE_ENV=staging                       # In Windows based systems
-npm start                 
-```
-
-To start server in production environment:
-
-```bash
-NODE_ENV=production npm start                 # In Linux based systems
-```
-
-```bash
-SET NODE_ENV=production                       # In Windows based systems
-npm start                 
+npm run devstart
 ```
 
 The details about the running API server become available at the console.
